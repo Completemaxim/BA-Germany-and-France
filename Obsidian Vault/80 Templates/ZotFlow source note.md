@@ -36,9 +36,8 @@ tags: [{% for t in item.tags %}"#{{ t.tag | replace: " ", "_" }}"{% unless forlo
 ## Annotations
 {%- for attachment in item.attachments -%}
 {%- if attachment.annotations.length > 0 -%}
-### {{ attachment.filename }}
 {%- for annotation in attachment.annotations -%}
-> [!zotflow-{{ annotation.type }}-{{ annotation.color }}] [{{ attachment.filename }}, p.{{ annotation.pageLabel }}]({{ annotation | annotation_link }})
+> [!zotflow-{{ annotation.type }}-{{ annotation.color }}] [p. {{ annotation.pageLabel }}]({{ annotation | annotation_link }})
 {%- if annotation.type == "ink" or annotation.type == "image"-%}
 > > ![[{{settings.annotationImageFolder}}/{{ annotation.key }}.png]]
 {%- else -%}
@@ -56,7 +55,7 @@ tags: [{% for t in item.tags %}"#{{ t.tag | replace: " ", "_" }}"{% unless forlo
 {%- if item.attachments.length == 0 and item.itemType == "attachment" and item.annotations.length > 0 -%}
 ## Annotations
 {%- for annotation in item.annotations -%}
-> [!zotflow-{{ annotation.type }}-{{ annotation.color }}] [{{ item.title }}, p.{{ annotation.pageLabel }}]({{ annotation | annotation_link }})
+> [!zotflow-{{ annotation.type }}-{{ annotation.color }}] [p. {{ annotation.pageLabel }}]({{ annotation | annotation_link }})
 {%- if annotation.type == "ink" or annotation.type == "image"-%}
 > > ![[{{settings.annotationImageFolder}}/{{ annotation.key }}.png]]
 {%- else -%}
