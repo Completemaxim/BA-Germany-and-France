@@ -6,6 +6,7 @@ itemType: {{ item.itemType | json }}
 publication: {{ item.publicationTitle | default: item.publisher | json }}
 url: {{ item.url | json }}
 tags: [{% for t in item.tags %}"#{{ t.tag | replace: " ", "_" }}"{% unless forloop.last %}, {% endunless %}{% endfor %}]
+??read: false
 ??status: to-read
 ??projects: []
 ---

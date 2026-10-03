@@ -6,6 +6,8 @@ formulas:
 properties:
   file.name:
     displayName: Source
+  read:
+    displayName: Read
   formula.type:
     displayName: Type
 views:
@@ -17,7 +19,7 @@ views:
       - title
       - creators
       - year
-      - status
+      - read
       - projects
     sort:
       - property: year
@@ -37,7 +39,7 @@ views:
     name: To read
     filters:
       and:
-        - 'status == "to-read"'
+        - '!read'
     order:
       - file.name
       - formula.type

@@ -36,7 +36,7 @@
 - **Finished?** Move the project or course folder to `90 Archive`.
 
 ## Property values
-- **Sources, `status`:** to-read · reading · read · used
+- **Sources, `read`:** checkbox, tick it when you have read the source. `status` (optional): to-read · reading · read · used
 - **Chapters, `status`:** outline · drafting · revising · done
 - **Projects and courses, `status`:** active · done
 - **Source type:** Zotero tags `type/academic`, `type/grey`, `type/newspaper`, `type/comment`, or the `sourceType` property in Obsidian
