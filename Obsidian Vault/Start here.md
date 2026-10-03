@@ -27,7 +27,7 @@
 7. Right-click **Home** and choose **Bookmark** so you can always get back to it.
 
 ## Everyday use
-- **Source:** read and highlight in ZotFlow. Open the source note, press Ctrl/Cmd+E and write in **My notes**. In its properties, set `status` and add the project, for example `BA Thesis`, to `projects`.
+- **Source:** read and highlight in ZotFlow. For your own notes on it, open the source note and run **ZotFlow: Create child note for current source note** (Ctrl/Cmd+P). The note appears under **Notes** and syncs with Zotero. In its properties, set `status` and add the project, for example `BA Thesis`, to `projects`.
 - **Idea:** create a new note in `30 Notes/Ideas` and insert the *Idea* template (Ctrl/Cmd+P → *Templates: Insert template*). Add the project to `projects`.
 - **Topic:** create a new note in `30 Notes/Topics` with the *Topic* template. It automatically lists every idea and source that links to it.
 - **Course:** create a folder in `20 Courses`, then a note with the *Course* template. For lectures, use the *Lecture* template and set `course` to a link to the course note. They then appear on the course page.

@@ -12,22 +12,6 @@ tags: [{% for t in item.tags %}"#{{ t.tag | replace: " ", "_" }}"{% unless forlo
 {%- capture quote_string %}{{ newline }}> {% endcapture -%}
 {%- capture quote_string_2 %}{{ newline }}> >{% endcapture -%}
 # {{ item.title | replace: "&apos;", "'" }}
-
-## My notes
-<!-- ZF_PERSIST_BEG_mynotes -->
-**Summary:** 
-
-**Main argument:** 
-
-**Method / data:** 
-
-**Useful for:** 
-
-**Topics:** 
-
-**Critique:** 
-<!-- ZF_PERSIST_END_mynotes -->
-
 {%- if item.abstractNote -%}
 ## Abstract
 > {{ item.abstractNote | replace: newline, quote_string }}
@@ -40,8 +24,8 @@ tags: [{% for t in item.tags %}"#{{ t.tag | replace: " ", "_" }}"{% unless forlo
 {%- endfor -%}
 
 {%- endif -%}
+## Notes
 {%- if item.notes.length > 0 -%}
-## Zotero notes
 {%- for note in item.notes -%}
 {{ note.note | html2md | wrap_editable: "NOTE", note.key }}
 
