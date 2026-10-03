@@ -1,21 +1,17 @@
 ---
-citationKey: {{ item.citationKey | json }}
-title: {{ item.title | json }}
-itemType: {{ item.itemType | json }}
+title: {{ item.title | replace: "&apos;", "'" | json }}
 creators: [{% for c in item.creators %}"{{ c.name }}"{% unless forloop.last %}, {% endunless %}{% endfor %}]
-publication: {{ item.publicationTitle | default: item.publisher | json }}
-date: {{ item.date | json }}
 year: {{ item.year }}
+itemType: {{ item.itemType | json }}
+publication: {{ item.publicationTitle | default: item.publisher | json }}
 url: {{ item.url | json }}
-doi: {{ item.DOI | json }}
-??projects: []
-??sourceType: ""
-??status: to-read
 tags: [{% for t in item.tags %}"#{{ t.tag | replace: " ", "_" }}"{% unless forloop.last %}, {% endunless %}{% endfor %}]
+??status: to-read
+??projects: []
 ---
 {%- capture quote_string %}{{ newline }}> {% endcapture -%}
 {%- capture quote_string_2 %}{{ newline }}> >{% endcapture -%}
-# {{ item.title }}
+# {{ item.title | replace: "&apos;", "'" }}
 
 ## My notes
 <!-- ZF_PERSIST_BEG_mynotes -->
