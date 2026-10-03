@@ -1,0 +1,29 @@
+filters:
+  and:
+    - 'type == "course"'
+    - '!file.inFolder("80 Templates")'
+views:
+  - type: table
+    name: Active courses
+    filters:
+      and:
+        - 'status == "active"'
+    order:
+      - file.name
+      - semester
+      - ects
+      - deadline
+    sort:
+      - property: deadline
+        direction: ASC
+  - type: table
+    name: All courses
+    groupBy:
+      property: semester
+      direction: ASC
+    order:
+      - file.name
+      - ects
+      - status
+    summaries:
+      ects: Sum

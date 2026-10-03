@@ -1,0 +1,56 @@
+filters:
+  and:
+    - file.hasProperty("zotero-key")
+formulas:
+  type: 'if(file.hasTag("type/academic") || sourceType == "academic", "🔵 Academic", if(file.hasTag("type/grey") || sourceType == "grey", "🟢 Grey literature", if(file.hasTag("type/newspaper") || sourceType == "newspaper", "🟠 Newspaper", if(file.hasTag("type/comment") || sourceType == "comment", "🔴 Comment", ""))))'
+properties:
+  file.name:
+    displayName: Source
+  formula.type:
+    displayName: Type
+views:
+  - type: table
+    name: All sources
+    order:
+      - file.name
+      - formula.type
+      - title
+      - creators
+      - year
+      - status
+      - projects
+    sort:
+      - property: year
+        direction: DESC
+  - type: table
+    name: By type
+    groupBy:
+      property: formula.type
+      direction: ASC
+    order:
+      - file.name
+      - title
+      - creators
+      - year
+      - publication
+  - type: table
+    name: To read
+    filters:
+      and:
+        - 'status == "to-read"'
+    order:
+      - file.name
+      - formula.type
+      - title
+      - year
+      - projects
+  - type: table
+    name: Not yet classified
+    filters:
+      not:
+        - file.hasTag("type")
+        - sourceType
+    order:
+      - file.name
+      - title
+      - itemType

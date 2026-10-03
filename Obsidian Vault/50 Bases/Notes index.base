@@ -1,0 +1,27 @@
+filters:
+  and:
+    - '!file.inFolder("80 Templates")'
+    - or:
+        - 'type == "idea"'
+        - 'type == "topic"'
+views:
+  - type: table
+    name: Ideas
+    filters:
+      and:
+        - 'type == "idea"'
+    order:
+      - file.name
+      - projects
+      - file.mtime
+    sort:
+      - property: file.mtime
+        direction: DESC
+  - type: table
+    name: Topics
+    filters:
+      and:
+        - 'type == "topic"'
+    order:
+      - file.name
+      - file.mtime
