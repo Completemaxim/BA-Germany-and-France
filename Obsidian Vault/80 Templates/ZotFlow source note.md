@@ -40,8 +40,8 @@ tags: [{% for t in item.tags %}"#{{ t.tag | replace: " ", "_" }}"{% unless forlo
 {%- endfor -%}
 
 {%- endif -%}
-## Notes
 {%- if item.notes.length > 0 -%}
+## Zotero notes
 {%- for note in item.notes -%}
 {{ note.note | html2md | wrap_editable: "NOTE", note.key }}
 
